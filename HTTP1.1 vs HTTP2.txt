@@ -1,0 +1,49 @@
+Write a blog on Difference between HTTP1.1 vs HTTP2
+
+Introduction to HTTP Protocols :
+HTTP, or Hypertext Transfer Protocol, is the foundation of data communication on the World Wide Web. It governs how data is transmitted between a client (such as a web browser) and a server (where a website is hosted). HTTP/1.1, introduced in 1997, has been the dominant protocol for over two decades, but as web technologies advanced, its limitations became apparent. This led to the development of HTTP/2, which aimed to address these shortcomings and provide a more efficient communication protocol.
+
+Multiplexing:
+
+HTTP/1.1:
+
+ In HTTP/1.1, each request/response transaction requires a separate TCP connection. This leads to a phenomenon known as head-of-line blocking, where subsequent requests are delayed if an earlier request is still being processed.
+
+HTTP/2:
+
+ HTTP/2 introduces multiplexing, allowing multiple requests and responses to be sent and received in parallel over a single TCP connection. This significantly reduces latency and improves overall performance, especially for websites with many resources.
+
+Header Compression:
+
+HTTP/1.1:
+
+ Every request and response in HTTP/1.1 includes headers containing metadata about the request or response. These headers are often verbose and redundant, leading to increased bandwidth usage.
+
+HTTP/2:
+
+ HTTP/2 employs header compression techniques, such as Huffman encoding and HPACK, to reduce the size of headers. This results in lower overhead and faster transmission of data, particularly for repeated requests to the same server.
+
+Server Push:
+
+HTTP/1.1: 
+
+In HTTP/1.1, web servers can only respond to client requests. If a webpage requires additional resources (e.g., CSS files, JavaScript), the client must issue separate requests for each resource.
+
+HTTP/2: 
+
+HTTP/2 introduces server push, allowing servers to proactively send resources to the client before they are requested. This can significantly improve page load times by reducing the number of round-trip requests required to render a webpage.
+
+Binary Protocol:
+
+HTTP/1.1:
+
+ HTTP/1.1 primarily relies on textual representations of data, using ASCII characters for headers and payloads. While human-readable, this format can be inefficient for machine processing.
+
+HTTP/2: 
+
+HTTP/2 is a binary protocol, meaning that data is encoded in binary format for transmission. This reduces parsing overhead and enables more efficient data compression and processing by both clients and servers.
+
+
+Conclusion: 
+
+HTTP/2 represents a significant advancement in web communication protocols, offering improved performance, efficiency, and security compared to its predecessor, HTTP/1.1. By leveraging features such as multiplexing, header compression, and server push, HTTP/2 enables faster and more responsive web experiences for users. While adoption may require updates to infrastructure and development practices, the benefits of HTTP/2 make it a compelling choice for modern web applications striving for optimal performance and user experience.
